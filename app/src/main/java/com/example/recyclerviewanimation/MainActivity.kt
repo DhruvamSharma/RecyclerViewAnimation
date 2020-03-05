@@ -3,7 +3,6 @@ package com.example.recyclerviewanimation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewanimation.adapter.CustomRecyclerViewAdapter
 import com.example.recyclerviewanimation.databinding.ActivityMainBinding
 
@@ -20,8 +19,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerview() {
-        val adapter: CustomRecyclerViewAdapter = CustomRecyclerViewAdapter()
-        val layoutManager: LinearLayoutManager = LinearLayoutManager(applicationContext)
+        val adapter = CustomRecyclerViewAdapter(binding.recyclerView)
+        val layoutManager = LinearLayoutManager(applicationContext)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
 
         binding.recyclerView.adapter = adapter
